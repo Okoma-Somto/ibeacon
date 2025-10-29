@@ -1,0 +1,23 @@
+1. restore Db on test server
+2. Run "Fawin_Rename_Tables.sql" on Fawin db
+3. Select Moneybook_???
+4. Run "CopyFawin2Moneybook_Structure.sql" on moneybook_???
+5. Run "CopyFawinStoredProc2Moneybook.sql" on moneybook_???
+6. Generate data script from fawin for the following tables:
+	[dbo].[FwAssetCodeing]
+	[dbo].[FwAssetUser]
+	[dbo].[FwCategory]
+	[dbo].[FwCpRvDep]
+	[dbo].[FwDepNarrationType]
+	[dbo].[FwDepreciationMethod]
+	[dbo].[FwDepreciationSchedule]
+	[dbo].[FwDipMtd]
+	[dbo].[FwDisposal]
+	[dbo].[FwGLPOSTID]
+	[dbo].[FwGLEntry]
+	[dbo].[FwRegister]
+	[dbo].[FwTransfer]
+	[dbo].[FwVendor]
+7. Run on moneybook (this will copy the fawin data into moneybook)
+8. if u encounter errors on data copy, try fix the error, delete the already copyied data in and start again from item 7.
+

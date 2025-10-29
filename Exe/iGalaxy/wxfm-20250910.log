@@ -1,0 +1,17 @@
+10-09-2025 08:38:AM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80004005 returned by SQL Server
+Description: Unspecified error
+SQL State: 
+SQL Error Number: 0
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  IBS_ACodesDefination.*
+
+FROM IBS_ACodesDefination as IBS_ACodesDefination  
+
+
+

@@ -1,0 +1,3 @@
+//MO108-109.TXT ANA00108 TO ANA00109
+IBS_VoucherNo		TAR	250	new record size: 250
+IBS_VoucherNo	PrepairedBy	RUB+		PrepairedBy is a new item

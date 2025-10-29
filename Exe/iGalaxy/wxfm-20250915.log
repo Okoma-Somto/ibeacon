@@ -1,0 +1,73 @@
+15-09-2025 06:37:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e14 returned by SQL Server
+Description: The multi-part identifier "RequisitionMaster.RequestType" could not be bound.
+SQL State: 42S22
+SQL Error Number: 4104
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  IBS_RequisitionMaster.*
+,Signatory1.FullName 											As Sign1Name
+,Signatory2.FullName 											As Sign2Name
+,IbsPeople.LastName + ' ' + IbsPeople.OtherNames   	As FullName
+,IbsPeople.ID_SubCusttomerType 								As ID_SubCustomerType
+FROM IBS_RequisitionMaster as IBS_RequisitionMaster  
+Left Outer Join wxIbsSecure.dbo.Signatory Signatory1	on Signatory1.ID_Signatory = Ibs_RequisitionMaster.Sign1ID 
+Left Outer Join wxIbsSecure.dbo.Signatory Signatory2	on Signatory2.ID_Signatory = Ibs_RequisitionMaster.Sign2ID
+Left Outer Join IbsMdm.dbo.IbsPeople IbsPeople			on IbsPeople.UCID    		= Ibs_RequisitionMaster.UCID
+Where Ibs_RequisitionMaster.Status In ('S') AND RequisitionMaster.RequestType = 'N'  AND IsNull(Ibs_RequisitionMaster.Merge_ID_IBS_RequisitionMaster, 0) = 0
+
+15-09-2025 06:52:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e37 returned by SQL Server
+Description: Invalid object name 'Ibs_CoaMaster'.
+SQL State: 42S02
+SQL Error Number: 208
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  Ibs_CoaMaster.*
+
+FROM Ibs_CoaMaster as Ibs_CoaMaster  
+
+
+
+15-09-2025 06:52:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e37 returned by SQL Server
+Description: Invalid object name 'Ibs_CoaDetail'.
+SQL State: 42S02
+SQL Error Number: 208
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  IBS_SubCategory.*
+,Ibs_CoaDetail.CoaDetalName  		As ReportIntoStdCategory
+FROM IBS_SubCategory as IBS_SubCategory  
+Left Outer Join Ibs_CoaDetail on Ibs_CoaDetail.CoaDetCode = IBS_SubCategory.CoaDetCode
+Where IsNull(IBS_SubCategory.CoaDetCode,'') = ''
+
+15-09-2025 06:52:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e37 returned by SQL Server
+Description: Invalid object name 'RatioDefination'.
+SQL State: 42S02
+SQL Error Number: 208
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select Top 1 RatioDefination.*
+
+FROM RatioDefination as RatioDefination  
+
+
+

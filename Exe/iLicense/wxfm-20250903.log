@@ -1,0 +1,17 @@
+03-09-2025 04:33:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e14 returned by SQL Server
+Description: Invalid column name 'GroupName'.
+SQL State: 42S22
+SQL Error Number: 207
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  LicenseUser.*
+
+FROM LicenseUser as LicenseUser  
+
+Where GroupName Like '%aaa%'
+

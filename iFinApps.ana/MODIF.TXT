@@ -1,0 +1,2 @@
+//MO291-292.TXT ANA00291 TO ANA00292
+Ext_TrialBalance		NFI		new file

@@ -1,0 +1,7 @@
+Exec dbo.Galaxy_sp_ClosePostingPeriod 0,  @ErrorNo OutPut, 'admin' 
+180
+Exec dbo.Galaxy_sp_ClosePostingPeriod 0,  @ErrorNo OutPut, 'admin' 
+Exec dbo.Galaxy_sp_ClosePostingPeriod 0,  @ErrorNo OutPut, 'admin' 
+Exec dbo.Galaxy_sp_ClosePostingPeriod 0,  @ErrorNo OutPut, 'admin' 
+Exec dbo.Galaxy_sp_ClosePostingPeriod 0,  @ErrorNo OutPut, 'admin' 
+Exec dbo.Galaxy_sp_ClosePostingPeriod 1,  @ErrorNo OutPut, 'admin' 

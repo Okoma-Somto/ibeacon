@@ -1,0 +1,320 @@
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WebUser.*
+,UserDepartment.ShortName As DepartmentName
+FROM WebUser as WebUser  
+Left Outer Join UserDepartment on UserDepartment.ID_UserDepartment = WebUser.ID_UserDepartment
+WHERE UserName = 'admin'
+
+25-07-2025 12:17:AM: Number of records returned for WebUser 1
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WebUser.*
+,UserDepartment.ShortName As DepartmentName
+FROM WebUser as WebUser  
+Left Outer Join UserDepartment on UserDepartment.ID_UserDepartment = WebUser.ID_UserDepartment
+WHERE UserName = 'Admin'
+
+25-07-2025 12:17:AM: Number of records returned for WebUser 1
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WxPreferences.*
+
+FROM WxPreferences as WxPreferences  
+
+
+
+25-07-2025 12:17:AM: Number of records returned for WxPreferences 1
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WebUser.*
+,UserDepartment.ShortName As DepartmentName
+FROM WebUser as WebUser  
+Left Outer Join UserDepartment on UserDepartment.ID_UserDepartment = WebUser.ID_UserDepartment
+Where WebUserID = 4101
+
+25-07-2025 12:17:AM: Number of records returned for WebUser 1
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  UserDepartment.*
+
+FROM UserDepartment as UserDepartment  
+
+
+
+25-07-2025 12:17:AM: Number of records returned for UserDepartment 5
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityDetail.*
+
+FROM SecurityDetail as SecurityDetail  
+
+Where ID_Application = 'GLXY'
+ORDER BY itemname
+25-07-2025 12:17:AM: Number of records returned for SecurityDetail 161
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityAccessGrid.*
+
+FROM SecurityAccessGrid as SecurityAccessGrid  
+
+Where ID_Application = 'GLXY' And WebUserID = 4101
+
+25-07-2025 12:17:AM: Number of records returned for SecurityAccessGrid 403
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityCategory.*
+
+FROM SecurityCategory as SecurityCategory  
+
+WHERE WebUserid = 4101
+
+25-07-2025 12:17:AM: Number of records returned for SecurityCategory 0
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityRole.*
+
+FROM SecurityRole as SecurityRole  
+
+WHERE securityroleid = ANY(SELECT securityroleid FROM WebUserRole WHERE WebUserid = 4101)
+
+25-07-2025 12:17:AM: Number of records returned for SecurityRole 0
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  AppBranch.*
+
+FROM AppBranch as AppBranch  
+
+Where AppBranch.ID_Branches = '773B7835-0A47-4369-90FF-D992FA568767'
+
+25-07-2025 12:17:AM: Number of records returned for AppBranch 0
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WebUser.*
+,UserDepartment.ShortName As DepartmentName
+FROM WebUser as WebUser  
+Left Outer Join UserDepartment on UserDepartment.ID_UserDepartment = WebUser.ID_UserDepartment
+WHERE UserName = 'admin'
+
+25-07-2025 12:17:AM: Number of records returned for WebUser 1
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WebUser.*
+,UserDepartment.ShortName As DepartmentName
+FROM WebUser as WebUser  
+Left Outer Join UserDepartment on UserDepartment.ID_UserDepartment = WebUser.ID_UserDepartment
+WHERE UserName = 'Admin'
+
+25-07-2025 12:17:AM: Number of records returned for WebUser 1
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WxPreferences.*
+
+FROM WxPreferences as WxPreferences  
+
+
+
+25-07-2025 12:17:AM: Number of records returned for WxPreferences 1
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WebUser.*
+,UserDepartment.ShortName As DepartmentName
+FROM WebUser as WebUser  
+Left Outer Join UserDepartment on UserDepartment.ID_UserDepartment = WebUser.ID_UserDepartment
+Where WebUserID = 4101
+
+25-07-2025 12:17:AM: Number of records returned for WebUser 1
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  UserDepartment.*
+
+FROM UserDepartment as UserDepartment  
+
+
+
+25-07-2025 12:17:AM: Number of records returned for UserDepartment 5
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityDetail.*
+
+FROM SecurityDetail as SecurityDetail  
+
+Where ID_Application = 'GLXY'
+ORDER BY itemname
+25-07-2025 12:17:AM: Number of records returned for SecurityDetail 161
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityAccessGrid.*
+
+FROM SecurityAccessGrid as SecurityAccessGrid  
+
+Where ID_Application = 'GLXY' And WebUserID = 4101
+
+25-07-2025 12:17:AM: Number of records returned for SecurityAccessGrid 403
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityCategory.*
+
+FROM SecurityCategory as SecurityCategory  
+
+WHERE WebUserid = 4101
+
+25-07-2025 12:17:AM: Number of records returned for SecurityCategory 0
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityRole.*
+
+FROM SecurityRole as SecurityRole  
+
+WHERE securityroleid = ANY(SELECT securityroleid FROM WebUserRole WHERE WebUserid = 4101)
+
+25-07-2025 12:17:AM: Number of records returned for SecurityRole 0
+25-07-2025 12:17:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  AppBranch.*
+
+FROM AppBranch as AppBranch  
+
+Where AppBranch.ID_Branches = '773B7835-0A47-4369-90FF-D992FA568767'
+
+25-07-2025 12:17:AM: Number of records returned for AppBranch 0
+25-07-2025 12:19:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WebUser.*
+,UserDepartment.ShortName As DepartmentName
+FROM WebUser as WebUser  
+Left Outer Join UserDepartment on UserDepartment.ID_UserDepartment = WebUser.ID_UserDepartment
+WHERE UserName = 'admin'
+
+25-07-2025 12:19:AM: Number of records returned for WebUser 1
+25-07-2025 12:19:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WebUser.*
+,UserDepartment.ShortName As DepartmentName
+FROM WebUser as WebUser  
+Left Outer Join UserDepartment on UserDepartment.ID_UserDepartment = WebUser.ID_UserDepartment
+WHERE UserName = 'Admin'
+
+25-07-2025 12:19:AM: Number of records returned for WebUser 1
+25-07-2025 12:19:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WxPreferences.*
+
+FROM WxPreferences as WxPreferences  
+
+
+
+25-07-2025 12:19:AM: Number of records returned for WxPreferences 1
+25-07-2025 12:19:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WebUser.*
+,UserDepartment.ShortName As DepartmentName
+FROM WebUser as WebUser  
+Left Outer Join UserDepartment on UserDepartment.ID_UserDepartment = WebUser.ID_UserDepartment
+Where WebUserID = 4101
+
+25-07-2025 12:19:AM: Number of records returned for WebUser 1
+25-07-2025 12:19:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  UserDepartment.*
+
+FROM UserDepartment as UserDepartment  
+
+
+
+25-07-2025 12:19:AM: Number of records returned for UserDepartment 5
+25-07-2025 12:19:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityDetail.*
+
+FROM SecurityDetail as SecurityDetail  
+
+Where ID_Application = 'GLXY'
+ORDER BY itemname
+25-07-2025 12:19:AM: Number of records returned for SecurityDetail 161
+25-07-2025 12:19:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityAccessGrid.*
+
+FROM SecurityAccessGrid as SecurityAccessGrid  
+
+Where ID_Application = 'GLXY' And WebUserID = 4101
+
+25-07-2025 12:19:AM: Number of records returned for SecurityAccessGrid 403
+25-07-2025 12:19:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityCategory.*
+
+FROM SecurityCategory as SecurityCategory  
+
+WHERE WebUserid = 4101
+
+25-07-2025 12:19:AM: Number of records returned for SecurityCategory 0
+25-07-2025 12:19:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityRole.*
+
+FROM SecurityRole as SecurityRole  
+
+WHERE securityroleid = ANY(SELECT securityroleid FROM WebUserRole WHERE WebUserid = 4101)
+
+25-07-2025 12:19:AM: Number of records returned for SecurityRole 0
+25-07-2025 12:19:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  AppBranch.*
+
+FROM AppBranch as AppBranch  
+
+Where AppBranch.ID_Branches = '773B7835-0A47-4369-90FF-D992FA568767'
+
+25-07-2025 12:19:AM: Number of records returned for AppBranch 0
+25-07-2025 12:20:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WebUser.*
+,UserDepartment.ShortName As DepartmentName
+FROM WebUser as WebUser  
+Left Outer Join UserDepartment on UserDepartment.ID_UserDepartment = WebUser.ID_UserDepartment
+WHERE UserName = 'admin'
+
+25-07-2025 12:20:AM: Number of records returned for WebUser 1
+25-07-2025 12:20:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WebUser.*
+,UserDepartment.ShortName As DepartmentName
+FROM WebUser as WebUser  
+Left Outer Join UserDepartment on UserDepartment.ID_UserDepartment = WebUser.ID_UserDepartment
+WHERE UserName = 'Admin'
+
+25-07-2025 12:20:AM: Number of records returned for WebUser 1
+25-07-2025 12:21:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WxPreferences.*
+
+FROM WxPreferences as WxPreferences  
+
+
+
+25-07-2025 12:21:AM: Number of records returned for WxPreferences 1
+25-07-2025 12:21:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  WebUser.*
+,UserDepartment.ShortName As DepartmentName
+FROM WebUser as WebUser  
+Left Outer Join UserDepartment on UserDepartment.ID_UserDepartment = WebUser.ID_UserDepartment
+Where WebUserID = 4101
+
+25-07-2025 12:21:AM: Number of records returned for WebUser 1
+25-07-2025 12:22:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  UserDepartment.*
+
+FROM UserDepartment as UserDepartment  
+
+
+
+25-07-2025 12:22:AM: Number of records returned for UserDepartment 5
+25-07-2025 12:22:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityDetail.*
+
+FROM SecurityDetail as SecurityDetail  
+
+Where ID_Application = 'GLXY'
+ORDER BY itemname
+25-07-2025 12:22:AM: Number of records returned for SecurityDetail 161
+25-07-2025 12:22:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityAccessGrid.*
+
+FROM SecurityAccessGrid as SecurityAccessGrid  
+
+Where ID_Application = 'GLXY' And WebUserID = 4101
+
+25-07-2025 12:22:AM: Number of records returned for SecurityAccessGrid 403
+25-07-2025 12:22:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityCategory.*
+
+FROM SecurityCategory as SecurityCategory  
+
+WHERE WebUserid = 4101
+
+25-07-2025 12:22:AM: Number of records returned for SecurityCategory 0
+25-07-2025 12:22:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  SecurityRole.*
+
+FROM SecurityRole as SecurityRole  
+
+WHERE securityroleid = ANY(SELECT securityroleid FROM WebUserRole WHERE WebUserid = 4101)
+
+25-07-2025 12:22:AM: Number of records returned for SecurityRole 0
+25-07-2025 12:22:AM: SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  AppBranch.*
+
+FROM AppBranch as AppBranch  
+
+Where AppBranch.ID_Branches = '773B7835-0A47-4369-90FF-D992FA568767'
+
+25-07-2025 12:22:AM: Number of records returned for AppBranch 0

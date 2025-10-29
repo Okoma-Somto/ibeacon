@@ -1,0 +1,214 @@
+04-09-2025 01:18:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e37 returned by SQL Server
+Description: Invalid object name 'Ibs_CoaMaster'.
+SQL State: 42S02
+SQL Error Number: 208
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  Ibs_CoaMaster.*
+
+FROM Ibs_CoaMaster as Ibs_CoaMaster  
+
+
+
+04-09-2025 01:18:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e37 returned by SQL Server
+Description: Invalid object name 'FwAssetUser'.
+SQL State: 42S02
+SQL Error Number: 208
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  FwAssetUser.*
+
+FROM FwAssetUser as FwAssetUser  
+
+Where UserID=''
+
+04-09-2025 01:18:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e37 returned by SQL Server
+Description: Invalid object name 'FwVendor'.
+SQL State: 42S02
+SQL Error Number: 208
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  FwVendor.*
+
+FROM FwVendor as FwVendor  
+
+Where VendorId = 0
+
+04-09-2025 01:18:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e37 returned by SQL Server
+Description: Invalid object name 'FwDepreciationMethod'.
+SQL State: 42S02
+SQL Error Number: 208
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  FwDepreciationMethod.*
+
+FROM FwDepreciationMethod as FwDepreciationMethod  
+
+
+
+04-09-2025 01:19:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e37 returned by SQL Server
+Description: Invalid object name 'Ibs_CoaDetail'.
+SQL State: 42S02
+SQL Error Number: 208
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  IBS_SubCategory.*
+,Ibs_CoaDetail.CoaDetalName  		As ReportIntoStdCategory
+FROM IBS_SubCategory as IBS_SubCategory  
+Left Outer Join Ibs_CoaDetail on Ibs_CoaDetail.CoaDetCode = IBS_SubCategory.CoaDetCode
+Where IsNull(IBS_SubCategory.CoaDetCode,'') = ''
+
+04-09-2025 01:19:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e37 returned by SQL Server
+Description: Invalid object name 'RatioDefination'.
+SQL State: 42S02
+SQL Error Number: 208
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select Top 1 RatioDefination.*
+
+FROM RatioDefination as RatioDefination  
+
+
+
+04-09-2025 02:12:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e37 returned by SQL Server
+Description: Invalid object name 'Ibs_CoaMaster'.
+SQL State: 42S02
+SQL Error Number: 208
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  Ibs_CoaMaster.*
+
+FROM Ibs_CoaMaster as Ibs_CoaMaster  
+
+
+
+04-09-2025 02:12:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e37 returned by SQL Server
+Description: Invalid object name 'Ibs_CoaDetail'.
+SQL State: 42S02
+SQL Error Number: 208
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  IBS_SubCategory.*
+,Ibs_CoaDetail.CoaDetalName  		As ReportIntoStdCategory
+FROM IBS_SubCategory as IBS_SubCategory  
+Left Outer Join Ibs_CoaDetail on Ibs_CoaDetail.CoaDetCode = IBS_SubCategory.CoaDetCode
+Where IsNull(IBS_SubCategory.CoaDetCode,'') = ''
+
+04-09-2025 02:12:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e37 returned by SQL Server
+Description: Invalid object name 'RatioDefination'.
+SQL State: 42S02
+SQL Error Number: 208
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select Top 1 RatioDefination.*
+
+FROM RatioDefination as RatioDefination  
+
+
+
+04-09-2025 02:15:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e37 returned by SQL Server
+Description: Invalid object name 'Ibs_CoaMaster'.
+SQL State: 42S02
+SQL Error Number: 208
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  Ibs_CoaMaster.*
+
+FROM Ibs_CoaMaster as Ibs_CoaMaster  
+
+
+
+04-09-2025 02:19:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e14 returned by SQL Server
+Description: Invalid column name 'CoaDetCode'.
+SQL State: 42S22
+SQL Error Number: 207
+ 
+Sub-error #1
+Description: Invalid column name 'CoaDetCode'.
+SQL State: 42S22
+SQL Error Number: 207
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  IBS_SubCategory.*
+,Ibs_CoaDetail.CoaDetalName  		As ReportIntoStdCategory
+FROM IBS_SubCategory as IBS_SubCategory  
+Left Outer Join Ibs_CoaDetail on Ibs_CoaDetail.CoaDetCode = IBS_SubCategory.CoaDetCode
+Where IsNull(IBS_SubCategory.CoaDetCode,'') = ''
+
+04-09-2025 02:26:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e14 returned by SQL Server
+Description: Invalid column name 'CoaDetCode'.
+SQL State: 42S22
+SQL Error Number: 207
+ 
+Sub-error #1
+Description: Invalid column name 'CoaDetCode'.
+SQL State: 42S22
+SQL Error Number: 207
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  IBS_SubCategory.*
+,Ibs_CoaDetail.CoaDetalName  		As ReportIntoStdCategory
+FROM IBS_SubCategory as IBS_SubCategory  
+Left Outer Join Ibs_CoaDetail on Ibs_CoaDetail.CoaDetCode = IBS_SubCategory.CoaDetCode
+Where IsNull(IBS_SubCategory.CoaDetCode,'') = ''
+

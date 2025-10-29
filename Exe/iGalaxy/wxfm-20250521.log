@@ -1,0 +1,80 @@
+21-05-2025 10:52:AM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e14 returned by SQL Server
+Description: Invalid column name 'CoaDetCode'.
+SQL State: 42S22
+SQL Error Number: 207
+ 
+Sub-error #1
+Description: Invalid column name 'CoaDetCode'.
+SQL State: 42S22
+SQL Error Number: 207
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  IBS_SubCategory.*
+,Ibs_CoaDetail.CoaDetalName  		As ReportIntoStdCategory
+FROM IBS_SubCategory as IBS_SubCategory  
+Left Outer Join Ibs_CoaDetail on Ibs_CoaDetail.CoaDetCode = IBS_SubCategory.CoaDetCode
+Where IsNull(IBS_SubCategory.CoaDetCode,'') = ''
+
+21-05-2025 12:32:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e37 returned by SQL Server
+Description: Invalid object name 'InvoiceWTaxReceipt'.
+SQL State: 42S02
+SQL Error Number: 208
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  InvoiceMaster.*
+,IbsPeople.LastName + ' ' + IbsPeople.FirstName	As CustomerName
+,JobMaster.JobDescription 	As JobDescription
+,JobMaster.RefNo 				As RefNo
+,JobMaster.ID_Currency		As ID_Currency
+,(Select sum(IsNull(Amount,0)+IsNull(ForexAmount,0))    from dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster And IsNull(ReceiptDetail.WTaxFlag,0)=0 		And IsNull(ReceiptDetail.Status,'') <> 'X')											 As AmountReceived
+,IsNull(InvoiceMaster.InvoiceAmount,0) - IsNull((Select sum(IsNull(Amount,0)+IsNull(ForexAmount,0)) from dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster 	And IsNull(ReceiptDetail.Status,'') <> 'X' And IsNull(ReceiptDetail.WTaxFlag,0)=0), 0) As Balance
+,(Select Sum(IsNull(Amount,0)+IsNull(ForexAmount,0))*-1 from dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster And IsNull(ReceiptDetail.WTaxFlag,0)=1  		And IsNull(ReceiptDetail.Status,'') <> 'X') 										 	 As WTaxRecvAble
+,(Select Sum(IsNull(Amount,0)+IsNull(ForexAmount,0))    from dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster And WtaxFlag=1  And IsNull(ReceiptDetail.Status,'') <> 'X')																	     As WTaxReceived
+,(Select Sum(IsNull(Amount,0)+IsNull(ForexAmount,0))    from dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster And IsNull(ReceiptDetail.WTaxFlag,0)=1 		And IsNull(ReceiptDetail.Status,'') <> 'X') + IsNull((Select Sum(IsNull(InvoiceWTaxReceipt.WTaxAmount,0)) from dbo.InvoiceWTaxReceipt Where InvoiceWTaxReceipt.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster),0) As WTaxBalance
+,(Select Sum(IsNull(Amount,0)+IsNull(ForexAmount,0)) *  InvoiceMaster.DeductVATatSource  from dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster And IsNull(ReceiptDetail.VatFlag,0)=1 And IsNull(ReceiptDetail.Status,'') <> 'X') 		As VatRecvAble
+,(Select Sum(IsNull(Amount,0)+IsNull(ForexAmount,0))    From dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster And VatFlag = 1 And IsNull(ReceiptDetail.Status,'') <> 'X')																As VatReceived
+,(Select Sum(IsNull(Amount,0)+IsNull(ForexAmount,0)) *  InvoiceMaster.DeductVATatSource from dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster And IsNull(ReceiptDetail.VatFlag,0)=1  And IsNull(ReceiptDetail.Status,'') <> 'X') - (Select Sum(IsNull(InvoiceVatReceipt.VatAmount,0)) From dbo.InvoiceVatReceipt Where InvoiceVatReceipt.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster) As VatBalance
+FROM InvoiceMaster as InvoiceMaster  
+Left Outer Join JobMaster on JobMaster.ID_JobMaster = InvoiceMaster.ID_JobMaster
+Left Outer Join IbsMdm.dbo.IbsPeople IbsPeople	ON IbsPeople.UCID = InvoiceMaster.UCID
+Where InvoiceMaster.Status = 'A' And  Abs(WTaxAmount) > IsNull((Select Sum(WTaxAmount) from InvoiceWTaxReceipt Where InvoiceWTaxReceipt.ID_InvoiceMaster = InvoiceMaster.ID_InvoiceMaster),0)
+Order by InvoiceMaster.ID_InvoiceMaster
+21-05-2025 12:32:PM: Sql Statement Failed 
+native SQLSERVER access error.
+Error Number = 117 
+ 
+Error 80040e37 returned by SQL Server
+Description: Invalid object name 'InvoiceWTaxReceipt'.
+SQL State: 42S02
+SQL Error Number: 208
+ 
+Unable to run query below:
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+Select  InvoiceMaster.*
+,IbsPeople.LastName + ' ' + IbsPeople.FirstName	As CustomerName
+,JobMaster.JobDescription 	As JobDescription
+,JobMaster.RefNo 				As RefNo
+,JobMaster.ID_Currency		As ID_Currency
+,(Select sum(IsNull(Amount,0)+IsNull(ForexAmount,0))    from dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster And IsNull(ReceiptDetail.WTaxFlag,0)=0 		And IsNull(ReceiptDetail.Status,'') <> 'X')											 As AmountReceived
+,IsNull(InvoiceMaster.InvoiceAmount,0) - IsNull((Select sum(IsNull(Amount,0)+IsNull(ForexAmount,0)) from dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster 	And IsNull(ReceiptDetail.Status,'') <> 'X' And IsNull(ReceiptDetail.WTaxFlag,0)=0), 0) As Balance
+,(Select Sum(IsNull(Amount,0)+IsNull(ForexAmount,0))*-1 from dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster And IsNull(ReceiptDetail.WTaxFlag,0)=1  		And IsNull(ReceiptDetail.Status,'') <> 'X') 										 	 As WTaxRecvAble
+,(Select Sum(IsNull(Amount,0)+IsNull(ForexAmount,0))    from dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster And WtaxFlag=1  And IsNull(ReceiptDetail.Status,'') <> 'X')																	     As WTaxReceived
+,(Select Sum(IsNull(Amount,0)+IsNull(ForexAmount,0))    from dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster And IsNull(ReceiptDetail.WTaxFlag,0)=1 		And IsNull(ReceiptDetail.Status,'') <> 'X') + IsNull((Select Sum(IsNull(InvoiceWTaxReceipt.WTaxAmount,0)) from dbo.InvoiceWTaxReceipt Where InvoiceWTaxReceipt.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster),0) As WTaxBalance
+,(Select Sum(IsNull(Amount,0)+IsNull(ForexAmount,0)) *  InvoiceMaster.DeductVATatSource  from dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster And IsNull(ReceiptDetail.VatFlag,0)=1 And IsNull(ReceiptDetail.Status,'') <> 'X') 		As VatRecvAble
+,(Select Sum(IsNull(Amount,0)+IsNull(ForexAmount,0))    From dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster And VatFlag = 1 And IsNull(ReceiptDetail.Status,'') <> 'X')																As VatReceived
+,(Select Sum(IsNull(Amount,0)+IsNull(ForexAmount,0)) *  InvoiceMaster.DeductVATatSource from dbo.ReceiptDetail Where ReceiptDetail.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster And IsNull(ReceiptDetail.VatFlag,0)=1  And IsNull(ReceiptDetail.Status,'') <> 'X') - (Select Sum(IsNull(InvoiceVatReceipt.VatAmount,0)) From dbo.InvoiceVatReceipt Where InvoiceVatReceipt.ID_InvoiceMaster=InvoiceMaster.ID_InvoiceMaster) As VatBalance
+FROM InvoiceMaster as InvoiceMaster  
+Left Outer Join JobMaster on JobMaster.ID_JobMaster = InvoiceMaster.ID_JobMaster
+Left Outer Join IbsMdm.dbo.IbsPeople IbsPeople	ON IbsPeople.UCID = InvoiceMaster.UCID
+Where InvoiceMaster.Status = 'A' And  Abs(WTaxAmount) > IsNull((Select Sum(WTaxAmount) from InvoiceWTaxReceipt Where InvoiceWTaxReceipt.ID_InvoiceMaster = InvoiceMaster.ID_InvoiceMaster),0)
+Order by InvoiceMaster.ID_InvoiceMaster
